@@ -9,6 +9,7 @@ extern struct suntab
  *	WARNING: Requires sign extension of characters.
  */
 
+void
 sun()
 {
 	double mmerc, mven, merth, mmars, mjup, msat;

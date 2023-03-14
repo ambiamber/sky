@@ -1,4 +1,10 @@
+#include <stdio.h>
+#define PDATEFUNCS
 #include "sky.h"
+
+void bdtsetup(double, double*);
+int  lastsun(double *, int m);
+
 
 int	timezone =	5;
 int	daylight =	1;
@@ -11,6 +17,7 @@ double
 dsrc(d, ifa, i)
 double d;
 double ifa[];
+int i;
 {
 	double y;
 
@@ -27,12 +34,15 @@ double ifa[];
 	return(d - y);
 }
 
+void
 ddd(d, y, ifa, ch)
 double d, y, ifa[];
+int ch;
 {
 
 }
 
+void
 dtsetup(d, ifa)
 double d;
 double ifa[];
@@ -50,8 +60,10 @@ double ifa[];
 	bdtsetup(d, ifa);
 }
 
+int
 lastsun(ifa, m)
 double ifa[];
+int m;
 {
 
 	if(ifa[1] < m)
@@ -63,9 +75,10 @@ double ifa[];
 	return(0); /* fix up later */
 }
 
+void
 bdtsetup(d, ifa)
-double ifa[];
 double d;
+double ifa[];
 {
 	double t;
 
@@ -84,6 +97,7 @@ double d;
 	ifa[4] = (t-ifa[3]) * 60.;
 }
 
+void
 pdate(d)
 double d;
 {
@@ -93,6 +107,7 @@ double d;
 	printf("%.0f %.0f %.0f", ifa[0], ifa[1], ifa[2]);
 }
 
+void
 ptime(d)
 double d;
 {
@@ -102,6 +117,7 @@ double d;
 	printf("%.0f:%.2f", ifa[3], ifa[4]);
 }
 
+void
 prlat()
 {
 /*

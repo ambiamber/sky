@@ -1,6 +1,25 @@
-#include "sky.h"
+#include <stdlib.h>
 #include <stdio.h>
+#include "sky.h"
 
+void args(int, char**);
+void init();
+void setime(double);
+int  rline(FILE *);
+
+extern void sun();
+extern void moon();
+extern void merc();
+extern void venus();
+extern void mars();
+extern void jup();
+extern void sat();
+extern void stars();
+
+extern void aberr();
+extern void nutate();
+
+int
 main(argc,argv)
 int argc;
 char *argv[];
@@ -87,6 +106,7 @@ char *argv[];
 
 }
 
+void
 args(argc,argv)
 int argc;
 char *argv[];
@@ -188,9 +208,10 @@ char *argv[];
 
 }
 
+void
 readlat()
 {
-	register i;
+	int i;
 	double ifa[3];
 
 	printf("NLat(deg) WLong(deg) elev(meters)\n");
@@ -202,6 +223,7 @@ readlat()
 	elev = ifa[2];
 }
 
+void
 readcat()
 {
 	char *gets();
@@ -212,6 +234,7 @@ readcat()
 	gets(p);
 }
 
+void
 init()
 {
 
@@ -238,11 +261,12 @@ init()
 	printf("%s\n", startab);
 */
 }
+int
 rline(f)
 FILE *f;
 {
-	register char *p;
-	register c;
+	char *p;
+	int c;
 
 	p = line;
 	do {
@@ -256,9 +280,10 @@ FILE *f;
 
 char*
 skip(n)
+     int n;
 {
-	register i;
-	register char *cp;
+	int i;
+	char *cp;
 
 	cp = line;
 	for(i=0; i<n; i++) {
@@ -274,7 +299,7 @@ skip(n)
 double
 readate()
 {
-	register i;
+	int i;
 	double ifa[5];
 
 	printf("year mo da hr min\n");
@@ -290,7 +315,7 @@ convdate(ifa)
 double ifa[];
 {
 	double y, d, temp;
-	register i;
+	int i;
 
 	y = ifa[0];
 	i = ifa[1];
@@ -322,6 +347,8 @@ double ifa[];
 	y += ifa[3]/24. + ifa[4]/1440. - .5 + temp;
 	return(y-2415020.);
 }
+
+void
 setime(day)
 double day;
 {

@@ -1,10 +1,14 @@
-#include "sky.h"
 #include <stdio.h>
+#include "sky.h"
 
+extern int rline(FILE *);
+extern void star();
+
+void
 stars()
 {
 	char starname[13];
-	register i;
+	int i;
 	double temp1;
 	FILE *f;
 
@@ -50,7 +54,7 @@ loop:
 	dd = atof(line+50);
 	px = atof(line+57);
 	mag = atof(line+64);
-	const = (int)atof(line+70);
+	constellation = (int)atof(line+70);
 
 /*
  *	convert rt ascension and declination to internal format

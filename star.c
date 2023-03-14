@@ -1,5 +1,6 @@
 #include "sky.h"
 
+void
 star()
 {
 	double capt0, capt1, capt12, capt13;

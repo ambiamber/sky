@@ -1,5 +1,7 @@
+#include <stdio.h>
 #include "sky.h"
 
+void
 aberr()
 {
 

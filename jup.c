@@ -6,6 +6,7 @@ extern struct juptab
 	char c[3];
 } juptab[];
 
+void
 jup()
 {
 	double pturbl, pturbb, pturbr;

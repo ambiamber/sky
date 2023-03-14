@@ -12,7 +12,9 @@
 #define TOPO	2048
 
 int flags;
+#if 0	/* in sky.h 'extern int dmo[]' and pdate 'int dmo[12]' */
 int dmo[];
+#endif
 
 char	startab[20];
 char	line[100];
@@ -38,7 +40,7 @@ double geolam, geobet, georad;
 double epoch, da, dd, px;
 double rah, ram, ras;
 long agc;
-int const;
+int constellation;
 double dday, dmin, dsec;
 double rps, shra, shdecl, sunra, sundec, sunsd;
 double moonra, moonde, moonsd;

@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "sky.h"
 
 extern struct nuttab
@@ -6,6 +7,7 @@ extern struct nuttab
 	char c[5];
 } nuttab[];
 
+void
 nutate()
 {
 

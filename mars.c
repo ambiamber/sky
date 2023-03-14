@@ -6,6 +6,7 @@ extern struct marst
 	char c[3];
 } marst[];
 
+void
 mars()
 {
 	double pturbl, pturbb, pturbr;

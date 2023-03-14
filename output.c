@@ -1,8 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define OUTPUTFUNCS
 #include "sky.h"
 
+void prhms(double, int);
+void prdms(double, int);
+
+void
 output()
 {
-
 	printf("%s ",object);
 
 	if(!((flags&GEO)||(flags&HELIO))){
@@ -26,16 +33,19 @@ output()
 	}
 }
 
+void
 prhms(arg,n)
 double arg;
 int n;
 {
 	int n1, n2;
 	double x;
-	char *format = " %2d %02d %07.4f";
+	char *_format = " %2d %02d %07.4f";
+	char *format = strdup(_format);
 
 	format[14] = n + '0';
 	format[12] = n + '3';
+
 	while(arg < 0.) arg += 2.*pi;
 	arg /= 15.;
 	x = arg/radian;
@@ -45,8 +55,10 @@ int n;
 	x = x - n2;
 	x = x * 60.;
 	printf(format, n1, n2, x);
+	free(format);
 }
 
+void
 prdms(arg,n)
 double arg;
 int n;
@@ -54,13 +66,16 @@ int n;
 	int n1, n2;
 	double x;
 	int sign;
-	char *format1 = " %4d %02d %07.4f";
-	char *format2 = "   -0 %02d %07.4f";
+	char *_format1 = " %4d %02d %07.4f";
+	char *_format2 = "   -0 %02d %07.4f";
+	char *format1 = strdup(_format1);
+	char *format2 = strdup(_format2);
 
 	format1[14] = n + '0';
 	format1[12] = n + '3';
 	format2[15] = n + '0';
 	format2[13] = n + '3';
+
 	if(arg<0.){
 		arg = -arg;
 		sign = -1;
@@ -78,4 +93,6 @@ int n;
 		printf(format2, n2, x);
 	else
 		printf(format1, n1, n2, x);
+	free(format1);
+	free(format2);
 }

@@ -1,5 +1,6 @@
 #include "sky.h"
 
+void
 sat()
 {
 	double pturbl, pturbb, pturbr;

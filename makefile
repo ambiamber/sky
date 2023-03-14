@@ -1,6 +1,8 @@
+CFLAGS=-g
+
 all:
-	cc -c *.c
+	cc $(CFLAGS) -c *.c
 	rm fmod.o
-	cc *.o -o sky
+	cc -o sky $(CFLAGS) *.o -lm
 clean:
 	rm -f sky *.o

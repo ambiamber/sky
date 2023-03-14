@@ -6,6 +6,7 @@ extern struct merctab
 	char c[3];
 } merctab[];
 
+void
 merc()
 {
 	double pturbl, pturbb, pturbr;

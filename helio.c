@@ -1,5 +1,7 @@
+#define HELIOFUNC
 #include "sky.h"
 
+void
 helio()
 {
 /*

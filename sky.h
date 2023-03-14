@@ -39,7 +39,7 @@ extern double geolam, geobet, georad;
 extern double epoch, da, dd, px;
 extern double rah, ram, ras;
 extern long agc;
-extern int const;
+extern int constellation;
 extern double dday, dmin, dsec;
 extern double rps, shra, shdecl, sunra, sundec, sunsd;
 extern double moonra, moonde, moonsd;
@@ -60,3 +60,26 @@ extern double cos();
 extern double floor();
 extern double convdate();
 extern char *skip();
+
+#ifndef HELIOFUNC
+extern void helio();
+#endif
+#ifndef GEOFUNC
+extern void geo();
+#endif
+#ifndef OUTPUTFUNCS
+extern void output();
+extern void prhms(double, int);
+extern void prdms(double, int);
+#endif
+
+#ifdef PDATEFUNCS
+# define EXTERN extern
+#else
+# define EXTERN
+#endif
+EXTERN void ddd(double, double, double[], int);
+EXTERN void pdate(double);
+EXTERN void ptime(double);
+EXTERN void prlat();
+#undef EXTERN

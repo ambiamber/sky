@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "sky.h"
 
 extern struct venust
@@ -6,6 +7,7 @@ extern struct venust
 	char c[3];
 } venust[];
 
+void
 venus()
 {
 	double pturbl, pturbb, pturbr;

@@ -1,5 +1,7 @@
+#define GEOFUNC
 #include "sky.h"
 
+void
 geo()
 {
 

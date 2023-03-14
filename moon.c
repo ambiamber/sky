@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "sky.h"
 
 /*
@@ -25,6 +26,7 @@ extern struct moont1
 	char c1[7];
 } moont1[];
 
+void
 moon()
 {
 	register struct moontab *mp;
@@ -494,6 +496,7 @@ moon()
 double
 sinx(coef,i,j,k,m,angle)
 double coef, angle;
+int i,j,k,m;
 {
 	double x;
 
@@ -520,6 +523,7 @@ double coef, angle;
 double
 cosx(coef,i,j,k,m,angle)
 double coef, angle;
+int i,j,k,m;
 {
 	double x;
 
