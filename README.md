@@ -12,7 +12,7 @@ See the man page for more details.
 
 # Issues
 
-This program requires you to copy the skytab data file to /usr/lib or adjust the code to expect it to be elsewhere.
+This program requires you to copy the startab data file to /usr/lib or adjust the code to expect it to be elsewhere.
 
 It is not Y2K compliant.
 
