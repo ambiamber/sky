@@ -226,12 +226,11 @@ readlat()
 void
 readcat()
 {
-	char *gets();
 	char *p;
 
 	printf("Enter name of star catalog: ");
 	p = startab;
-	gets(p);
+	fgets(p, sizeof(startab), stdin);
 }
 
 void
